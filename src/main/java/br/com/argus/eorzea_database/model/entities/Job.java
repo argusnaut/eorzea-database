@@ -2,8 +2,8 @@ package br.com.argus.eorzea_database.model.entities;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Size;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -16,7 +16,8 @@ public class Job extends BaseEntity {
     private String name;
 
     @NotNull
-    @Size(min = 3, max = 3)
+    @Min(3)
+    @Max(3)
     private String abbreviation;
 
     private String symbol;
